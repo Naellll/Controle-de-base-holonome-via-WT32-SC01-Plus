@@ -42,8 +42,6 @@ public:
     _touch.config(touch_cfg);
   }
 
-LGFX lcd;
-
 void initTouch() {_touch.init();}
 
   bool getTouch(int16_t* x, int16_t* y) {
@@ -58,6 +56,8 @@ void initTouch() {_touch.init();}
     return touch;
   }
 };
+
+LGFX lcd;
 
 void Button(){
   lcd.fillScreen(TFT_PINK);
