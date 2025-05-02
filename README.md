@@ -4,6 +4,13 @@
 Sur ce github, vous trouverez toutes les informations relatives au projet WT32 de A à Z ainsi que l'avancement actuel du projet.
 
 ## Objectifs en cours :
-- continuer à réaliser des petits projets permettant de prendre en main la connectivité de la carte Wifi et Bluetooth
-- documenter notre travail et préparer la soutenance du 24/03
-- commencer le programme permettant de communiquer avec la passerelle de la base holonme avec l'aide de Monsier Philippe GICQUEL
+
+### Tous :
+- soutenance du 05/05
+- documenter et commenter tout les programmes
+- créer guide explicatif utilisation (éteinte lorsque pas de connexion, wifi et code à modifier dans le prog etc.)
+- rapport et archive 12/05
+
+### Nathanaël
+- finir l'ihm (jauges, peaufiner, en attente de réseau)
+- finir le tutoriel de prise en main
