@@ -27,15 +27,15 @@ typedef union {
 // VARIABLES GLOBALES
 HardwareSerial robot_serial(1);
 DataBase data;
+unsigned long essaiConnexionPrecedent = 0;
 
-// EXECUTION
 void setup() {
   Serial.begin(115200);
   Serial.println("Démarrage ESP32...");
 
   robot_serial.begin(115200, SERIAL_8N1, 20, 21);
 
-  // Attente d'une connexion au WIFI
+  // Connexion au WiFi
   WiFi.begin(ssid, mdp);
   Serial.print("Connexion au WiFi...");
   while (WiFi.status() != WL_CONNECTED) {
@@ -46,22 +46,27 @@ void setup() {
   Serial.println("\nWiFi connecté");
   Serial.println("IP locale : " + WiFi.localIP().toString());
 
-
-  // Attente de la connnexion au serveur
-  Serial.printf("Connexion au serveur %s : %d...\n", host, port);
-  if (client.connect(host, port)) {
-    Serial.println("Connecté au serveur !");
-  } else {
-    Serial.println("Échec de connexion au serveur.");
-  }
+  // Tentative initiale de connexion au serveur
+  connexionServeur();
 }
 
 void loop() {
-  if (client.connected() && client.available()>= 7) {
-    // Lecture du message reçu
+  // Tentative de reconnexion si le serveur est déconnecté
+  if (!client.connected()) {
+    unsigned long cmpt = millis();
+    if (cmpt - essaiConnexionPrecedent >= 2000) {
+      essaiConnexionPrecedent = cmpt;
+      Serial.println("Serveur déconnecté, tentative de reconnexion...");
+      connexionServeur();
+    }
+    return; // ne fait rien tant que le client n’est pas connecté
+  }
+
+  // Lecture des données si disponibles
+  if (client.available() >= 7) {
     client.readBytes((uint8_t*)&data, 7);
 
-    // Envoi des 7 octets binaires sur le port série secondaire
+    // Envoi au port série secondaire
     robot_serial.write(data.DataSerial, 7);
 
     Serial.print("Vitesse X : ");
@@ -70,13 +75,21 @@ void loop() {
     Serial.println(data.ConsigneBase.VitesseY);
     Serial.print("Fonction : ");
     Serial.println(data.ConsigneBase.Fct);
-    Serial.println();  // Saut de ligne
-    // Affichage des 7 octets envoyés dans le moniteur série
+
     Serial.print("DataSerial: ");
     for (int i = 0; i < 7; i++) {
       Serial.print(data.DataSerial[i]);
       Serial.print(" ");
     }
     Serial.println("\n----------------------\n");
+  }
+}
+
+void connexionServeur() {
+  Serial.printf("Connexion au serveur %s : %d...\n", host, port);
+  if (client.connect(host, port)) {
+    Serial.println("Connecté au serveur !");
+  } else {
+    Serial.println("Échec de connexion au serveur.");
   }
 }
