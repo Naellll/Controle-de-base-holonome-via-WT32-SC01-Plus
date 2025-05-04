@@ -12,5 +12,4 @@ Sur ce github, vous trouverez toutes les informations relatives au projet WT32 d
 - rapport et archive 12/05
 
 ### Nathanaël
-- finir l'ihm (jauges, peaufiner, en attente de réseau)
 - finir le tutoriel de prise en main
