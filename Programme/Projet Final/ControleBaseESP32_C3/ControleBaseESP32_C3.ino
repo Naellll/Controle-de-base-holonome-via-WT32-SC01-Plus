@@ -2,11 +2,11 @@
 #include <WiFi.h>
 
 // CONFIGURATION WIFI
-const char* ssid = "wt324life"; // Nom du Wifi
-const char* mdp = "gastonbanane"; // Mot de passe du Wifi
+const char* ssid = "eliez"; // Nom du Wifi
+const char* mdp = "123456789"; // Mot de passe du Wifi
 
 // CONFIGURATION SERVEUR
-const char* host = "192.168.43.61"; // Adresse IP du serveur
+const char* host = "192.168.54.5"; // Adresse IP du serveur
 const uint16_t port = 1234; // Port du serveur
 WiFiClient client;
 
@@ -51,37 +51,39 @@ void setup() {
 }
 
 void loop() {
-  // Tentative de reconnexion si le serveur est déconnecté
-  if (!client.connected()) {
-    unsigned long cmpt = millis();
-    if (cmpt - essaiConnexionPrecedent >= 2000) {
-      essaiConnexionPrecedent = cmpt;
-      Serial.println("Serveur déconnecté, tentative de reconnexion...");
-      connexionServeur();
+  static unsigned long dernierTest = 0;
+
+  // Vérifier toutes les 2 secondes
+  if (millis() - dernierTest > 2000) {
+    dernierTest = millis();
+
+    // Connexion perdue (TCP cassé ou serveur débranché)
+    if (!client.connected()) {
+      Serial.println("Connexion perdue, tentative de reconnexion...");
+      client.stop(); // Nettoie la socket
+      connexionServeur(); // Re-tente une connexion
+    } else {
+      // Même si connecté, on teste si le serveur répond encore
+      client.write((uint8_t)0x00); // Envoi d’un byte neutre (heartbeat)
+      if (!client.connected()) {
+        Serial.println("Serveur ne répond plus, reconnexion forcée...");
+        client.stop();
+        connexionServeur();
+      }
     }
-    return; // ne fait rien tant que le client n’est pas connecté
   }
 
-  // Lecture des données si disponibles
-  if (client.available() >= 7) {
+  // Si connecté, lire les données si disponibles
+  if (client.connected() && client.available() >= 7) {
     client.readBytes((uint8_t*)&data, 7);
-
-    // Envoi au port série secondaire
     robot_serial.write(data.DataSerial, 7);
 
-    Serial.print("Vitesse X : ");
-    Serial.println(data.ConsigneBase.VitesseX);
-    Serial.print("Vitesse Y : ");
-    Serial.println(data.ConsigneBase.VitesseY);
-    Serial.print("Fonction : ");
-    Serial.println(data.ConsigneBase.Fct);
-
-    Serial.print("DataSerial: ");
-    for (int i = 0; i < 7; i++) {
-      Serial.print(data.DataSerial[i]);
-      Serial.print(" ");
-    }
-    Serial.println("\n----------------------\n");
+    // Debug
+    Serial.printf("X: %d | Y: %d | Fct: %d\n",
+      data.ConsigneBase.VitesseX,
+      data.ConsigneBase.VitesseY,
+      data.ConsigneBase.Fct
+    );
   }
 }
 
