@@ -8,8 +8,8 @@
 #include <WiFiServer.h>
 
 // PARAMETRES (A ADAPTER)
-const char* ssid = "wt324life";       // Nom du Wifi
-const char* mdp = "gastonbanane";     // Mot de passe du Wifi
+const char* ssid = "eliez";       // Nom du Wifi
+const char* mdp = "123456789";     // Mot de passe du Wifi
 const int VITESSE_MAX_ROBOT = 400;    // Vitesse maximale du robot (ne pas depasser 450)
 const int DELAIS_ENVOI_DONNEE = 25;   // Le delais d'envoi sera de DELAIS_ENVOI_DONNEE * 20 (en ms)
 
@@ -75,8 +75,15 @@ void loop() {
     if (!client || !client.connected()) {
       if (client) {
         client.stop();
+        Serial.println("Ancien client déconnecté");
       }
       client = serveur.available();
+      Serial.println("Nouveau client connecté");
+    } else {
+      // Un autre client tente de se connecter mais un client est déjà actif
+      WiFiClient rejectClient = serveur.available();
+      rejectClient.stop();  // Refuser les connexions multiples
+      Serial.println("Client rejeté (déjà connecté)");
     }
   }
 
