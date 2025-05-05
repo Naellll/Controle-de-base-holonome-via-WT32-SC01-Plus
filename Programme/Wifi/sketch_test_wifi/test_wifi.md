@@ -5,8 +5,6 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;Ce programme est aussi fonctionnel si vous utilisez un hotspot portable (partage de connexion depuis un smartphone).
 
----
-
 ## Installation
 
 &nbsp;&nbsp;&nbsp;&nbsp;Pour utiliser ce programme, il est nécessaire que vous ayez pris connaissance du tutoriel pour mettre en place votre espace de travail sous Arduino IDE.
