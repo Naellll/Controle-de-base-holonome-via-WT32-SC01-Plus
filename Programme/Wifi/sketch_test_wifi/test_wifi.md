@@ -1,9 +1,9 @@
 # Test connexion WiFi : 
 ## *sketch_test_wifi.ino*
 
-> &nbsp;&nbsp;&nbsp;&nbsp;Ce programme est fonctionnel sur une carte WT32-SC01 Plus. Il permet à la carte de développement de se connecter à un réseau WiFi. Ce qui est utile comme point de départ pour un projet basé sur une connectivité WiFi. 
-> 
-> &nbsp;&nbsp;&nbsp;&nbsp;Ce programme est aussi fonctionnel si vous utilisez un hotspot portable (partage de connexion depuis un smartphone).
+&nbsp;&nbsp;&nbsp;&nbsp;Ce programme est fonctionnel sur une carte WT32-SC01 Plus. Il permet à la carte de développement de se connecter à un réseau WiFi. Ce qui est utile comme point de départ pour un projet basé sur une connectivité WiFi. 
+
+&nbsp;&nbsp;&nbsp;&nbsp;Ce programme est aussi fonctionnel si vous utilisez un hotspot portable (partage de connexion depuis un smartphone).
 
 ---
 
