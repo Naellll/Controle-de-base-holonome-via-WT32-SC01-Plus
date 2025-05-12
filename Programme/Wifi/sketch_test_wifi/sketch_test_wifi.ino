@@ -19,12 +19,13 @@ void setup() {
     delay(500);
     Serial.print(".");
   }
-  
+
+  // Affiche les informations de connexion dans le moniteur série
   Serial.println();
   Serial.print("Connecte au wifi d'adresse IP : ");
   Serial.println(WiFi.localIP());
 }
 
 void loop() {
-  // Code du votre programme
+  // Rien dans la boucle infinie car on teste juste la connexion au WiFi qui ne doit se faire qu'une seule fois
 }
