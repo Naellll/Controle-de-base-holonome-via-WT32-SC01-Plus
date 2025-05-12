@@ -128,6 +128,6 @@ void loop() {
       serveur.println("gauche");
     }
   }
-
+  // Délai pour ne pas surcharger le serveur
   delay(100);
 }
