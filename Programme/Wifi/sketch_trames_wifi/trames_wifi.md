@@ -2,7 +2,7 @@
 
 ## *sketch_trames_wifi.ino*
 
-&nbsp;&nbsp;&nbsp;&nbsp;Ce fichier permet de gérer le côté de la carte de développement WT32-SC01 Plus. La carte doit se connecter au réseau WiFi, puis se connecter au serveur TCP mis en place dans le second fichier. Ce programme de la carte affiche quatre carré de différentes couleurs sur l'écran, selon lequel on clique, une certaine trame sous forme de chaîne de caractère sera envoyer au serveur TCP. Ces chaînes de caractères indiquent un mouvement : haut, bas, gauche ou droite.
+> &nbsp;&nbsp;&nbsp;&nbsp;Ce fichier permet de gérer le côté de la carte de développement WT32-SC01 Plus. La carte doit se connecter au réseau WiFi, puis se connecter au serveur TCP mis en place dans le second fichier. Ce programme de la carte affiche quatre carré de différentes couleurs sur l'écran, selon lequel on clique, une certaine trame sous forme de chaîne de caractère sera envoyer au serveur TCP. Ces chaînes de caractères indiquent un mouvement : haut, bas, gauche ou droite.
 
 &nbsp;&nbsp;&nbsp;&nbsp;Pour utiliser ce programme, il est nécessaire que vous ayez pris connaissance du tutoriel pour mettre en place votre espace de travail sous Arduino IDE.
 
