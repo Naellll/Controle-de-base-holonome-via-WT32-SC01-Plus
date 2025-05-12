@@ -39,8 +39,6 @@ public:
     _touch.config(touch_cfg);
   }
 
-
-
   void initTouch() {_touch.init();}
 
   bool getTouch(int16_t* x, int16_t* y) {
@@ -60,10 +58,10 @@ public:
 
 LGFX lcd;
 
-WiFiClient client;
+WiFiClient serveur;
 
 void dessin(){
-  lcd.fillScreen(TFT_WHITE);
+  lcd.fillScreen(TFT_WHITE);                   // Fond d'écran en blanc
   lcd.fillRect(190, 10, 100, 100, TFT_RED);    // Carre Haut
   lcd.fillRect(290, 110, 100, 100, TFT_BLUE);  // Carre Droite
   lcd.fillRect(190, 210, 100, 100, TFT_GREEN); // Carre Bas
@@ -75,8 +73,6 @@ void dessin(){
 void setup() {
   pinMode(45, OUTPUT);
   digitalWrite(45, HIGH);
-
-  ///////// Connexion ////////
   Serial.begin(115200);
 
   // Connexion Wi-Fi
@@ -86,15 +82,17 @@ void setup() {
     delay(500);
     Serial.print(".");
   }
+
+  // Affiche les informations de la connexion dans le moniteur série
   Serial.println("\nWi-Fi connecté !");
   Serial.print("Adresse IP ESP32 : ");
   Serial.println(WiFi.localIP());
 
   // Connexion au serveur Python
   Serial.printf("Connexion au serveur %s : %d ...\n", host, port);
-  if (client.connect(host, port)) {
+  if (serveur.connect(host, port)) {
     Serial.println("Connecté au serveur !");
-    client.println("connexion"); // Envoi de données
+    serveur.println("connexion"); // Envoi de données
   } else {
     Serial.println("Échec de connexion.");
   }
@@ -113,20 +111,21 @@ void loop() {
 
   int16_t x, y;
 
-  if (client.connected() && lcd.getTouch(&x, &y)) {
-  //if (lcd.getTouch(&x, &y)) {
+  if (serveur.connected() && lcd.getTouch(&x, &y)) {
     if (190 <= x && x <= 290 && 10 <= y && y <= 110){          // Carre Haut
+      // Retour dans le moniteur série
       Serial.printf("Touch: x=%d, y=%d\n", x, y);
-      client.println("haut");
+      // Envoi la chaîne de caractère au serveur
+      serveur.println("haut");
     }else if (290 <= x && x <= 390 && 110 <= y && y <= 210){   // Carre Droite
       Serial.printf("Touch: x=%d, y=%d\n", x, y);
-      client.println("droite");
+      serveur.println("droite");
     }else if (190 <= x && x <= 290 && 210 <= y && y <= 310){   // Carre Bas
       Serial.printf("Touch: x=%d, y=%d\n", x, y);
-      client.println("bas");
+      serveur.println("bas");
     }else if (90 <= x && x <= 190 && 110 <= y && y <= 210){    // Carre Gauche
       Serial.printf("Touch: x=%d, y=%d\n", x, y);
-      client.println("gauche");
+      serveur.println("gauche");
     }
   }
 
