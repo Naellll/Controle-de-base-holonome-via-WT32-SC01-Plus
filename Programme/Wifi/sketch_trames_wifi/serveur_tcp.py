@@ -8,6 +8,9 @@ import socket
 
 ##### FONCTIONS #####
 def deplacer(cmd):
+    """
+    Déplace le disque selon la commande reçue en paramètre de la fonction
+    """
     global x, y
 
     if cmd == "haut" and y > 0:
@@ -51,14 +54,15 @@ print(adresse)
 fenetre = tk.Tk()
 fenetre.title("WT32-SC01 plus en connexion Wi-Fi")
 fenetre.geometry("500x500")
-
 canva = tk.Canvas(fenetre, width=500, height=500, bg="white")
 canva.pack()
 
+# Création de la grille
 for i in range(0, 501, 50):
     canva.create_line(i, 0, i, 500, fill="black")
     canva.create_line(0, i, 500, i, fill="black")
 
+# Position de départ du disque
 x, y = 2, 2
 disque = canva.create_oval(100, 100, 150, 150, fill="red")
 
