@@ -1,6 +1,12 @@
+##### CONSTANTES #####
+HOST = "0.0.0.0"
+PORT = numero_port
+
+##### IMPORTATIONS #####
 import tkinter as tk
 import socket
 
+##### FONCTIONS #####
 def deplacer(cmd):
     global x, y
 
@@ -18,8 +24,10 @@ def deplacer(cmd):
 
     canva.coords(disque, x_nouveau - 25, y_nouveau - 25, x_nouveau + 25, y_nouveau + 25)
 
-# Fonction pour vérifier les messages entrants sans bloquer la GUI
 def verifier_socket():
+    """
+    Vérifie les messages entrants sans bloquer l'interface graphique
+    """
     try:
         client.settimeout(0.01)  # Petite temporisation pour éviter de bloquer
         data = client.recv(1024).decode("utf-8").strip().lower()
@@ -32,13 +40,12 @@ def verifier_socket():
 
 ##### SOCKET #####
 serveur = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-serveur.bind(("0.0.0.0", 12345))
+serveur.bind((HOST, PORT))
 serveur.listen(1)
 print("En attente de connexion...")
 client, adresse = serveur.accept()
 print(client)
 print(adresse)
-#print("Connexion a : " + adresse)
 
 ###### TKINTER #####
 fenetre = tk.Tk()
