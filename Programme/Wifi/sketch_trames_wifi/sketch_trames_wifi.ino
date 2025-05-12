@@ -1,3 +1,11 @@
+// CONSTANTES
+const char* ssid = "nom_wifi";
+const char* password = "mot_de_passe";
+
+const char* host = "adresse_serveur";
+const uint16_t port = numero_port;
+
+// IMPORTATIONS
 #include <LovyanGFX.hpp>
 #include <WiFi.h>
 
@@ -51,12 +59,6 @@ public:
 ///////////////////////////////////////////////////////////////////////////////
 
 LGFX lcd;
-
-const char* ssid = "eliez";
-const char* password = "123456789";
-
-const char* host = "192.168.249.136";  // ip du pc
-const uint16_t port = 12345;         // port du serveur pc
 
 WiFiClient client;
 
