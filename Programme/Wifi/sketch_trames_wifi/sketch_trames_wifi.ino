@@ -2,7 +2,7 @@
 const char* ssid = "nom_wifi";
 const char* password = "mot_de_passe";
 
-const char* host = "adresse_serveur";
+const char* host = "adresse_ip";
 const uint16_t port = numero_port;
 
 // IMPORTATIONS
