@@ -2,7 +2,7 @@
 
 ## *ControleBaseWT32.ino* :
 
-&nbsp;&nbsp;&nbsp;&nbsp;Ce répertoire comprend le fichier Arduino à téléverser sur une carte de développement WT32-SC01 Plus. Il contient également d'autres fichiers qui permettent d'alléger la lecture du code du programme principal. Un de ses fichier sert à mettre en place la bibliothèque pour gérer l'interface homme-machine (IHM). Tandis qu'un seconde permet de générer cet IHM. 
+&nbsp;&nbsp;&nbsp;&nbsp;Ce répertoire comprend le fichier Arduino à téléverser sur une carte de développement WT32-SC01 Plus. Il contient également d'autres fichiers qui permettent d'alléger la lecture du code du programme principal. Un de ses fichier sert à mettre en place la bibliothèque pour gérer l'interface homme-machine (IHM). Tandis qu'un seconde permet de générer cet IHM. La gestion des fichier .h et .cpp est expliquée dans le document explicatif du programme de prise en main : C_Afficahge_image.cpp.
 
 &nbsp;&nbsp;&nbsp;&nbsp;Le WT32-SC01 Plus hébergera un serveur TCP sur lequel un ESP32 se connectera pour recevoir les différentes commandes émises. Ces commandes sont en réalité une structure de donnée *C* qui comprend les vitesses en X et Y, une fonction, et deux autres octets pour contrôler l'intégrité des trames.
 
