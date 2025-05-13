@@ -2,6 +2,7 @@
 
 Projet pluridisciplinaire PEI-2 – L2 PEI  
 Auteurs : Ilan CHANY, Nathanaël DEBREILLY, Eliez LE HUNSEC
+Encadrants : **M. Stéphane BOCHARD**, **M. Philippe GICQUEL**
 
 ---
 
@@ -40,7 +41,7 @@ Le projet se veut **modulaire**, **intuitif**, et facilement utilisable pour des
 - **LovyanGFX** pour l'IHM graphique
 - **BLE Arduino** pour le Bluetooth
 - **WiFi.h** pour la connectivité TCP
-- **STM32CubeMX** (projet domotique futur)
+- **STM32CubeMX** (logiciel sur lequel est programmé la base holonome)
 - **Tkinter** (interface Python côté PC pour les tests)
 
 ---
@@ -53,14 +54,6 @@ L'IHM principale est conçue en **mode vertical** pour une meilleure prise en ma
 - Affichage des vitesses en X et Y en temps réel.
 - Informations sur la connexion et mode actif (Wi-Fi / Bluetooth).
 - Interface simple avec retour visuel immédiat.
-
-### 📁 Répertoire `Aide/coordonnees interfaces/`
-
-Contient :
-- Des fichiers C avec des tableaux d’images (`.c` / `.h`) pour affichage graphique.
-- Coordonnées des zones tactiles cliquables.
-- Exemples d’affichage d’image ou de texte via LovyanGFX.
-- Références pour positionnement et interaction utilisateur.
 
 ---
 
