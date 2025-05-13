@@ -1,0 +1,73 @@
+Titre : Contrôle de Base Holonome via WT32-SC01 Plus
+
+Projet pluridisciplinaire PEI-2 – L2 PEI
+Auteurs : Ilan CHANY, Nathanaël DEBREILLY, Eliez LE HUNSEC
+Encadrants : M. Stéphane BOCHARD, M. Philippe GICQUEL
+
+Présentation du projet
+
+Ce projet vise à créer une interface homme-machine interactive sur la carte WT32-SC01 Plus, permettant de contrôler une base robotique holonome. Le système transmet les commandes de mouvement via Wi-Fi ou Bluetooth (BLE) grâce à une passerelle ESP32-C3.
+
+Le projet est conçu pour être modulaire, intuitif et facile à utiliser dans des démonstrations, des travaux pratiques de mécatronique ou en domotique.
+
+Objectifs
+
+- Concevoir une interface tactile esthétique et réactive.
+- Assurer la communication entre la carte WT32-SC01 Plus et le robot via Wi-Fi ou Bluetooth.
+- Permettre un contrôle fluide des mouvements holonomes.
+- Développer des outils réutilisables dans d'autres projets embarqués.
+
+Matériel et outils
+
+Matériel utilisé :
+- Carte WT32-SC01 Plus (ESP32-S3) avec écran tactile 480x320px, 16 MB de mémoire Flash et 8 MB de PSRAM
+- ESP32-C3 servant de passerelle
+- Base robotique holonome à 3 roues
+- Alimentation externe ou batterie
+- Ordinateur pour le développement
+
+Logiciels et bibliothèques :
+- Arduino IDE avec le noyau esp32
+- LovyanGFX pour l’interface graphique
+- BLE Arduino pour le Bluetooth
+- WiFi.h pour la communication TCP
+- STM32CubeMX pour programmer la base
+- Tkinter (interface en Python sur PC pour tests)
+
+Interface utilisateur
+
+L’interface tactile est en orientation verticale pour une meilleure ergonomie.
+Fonctionnalités :
+- Cercle central pour indiquer la direction et la vitesse du robot
+- Affichage en temps réel des vitesses sur les axes X et Y
+- Indications sur la connexion et le mode actif (Wi-Fi ou Bluetooth)
+- Interface simple et réactive
+
+Connectivité
+
+Deux modes de communication disponibles :
+
+1. Wi-Fi (TCP) :
+   - Connexion via un point d’accès partagé (PC ou smartphone)
+   - La carte WT32-SC01 Plus joue le rôle de client TCP
+   - Transmission de trames structurées
+
+2. Bluetooth BLE :
+   - La carte WT32 joue le rôle de serveur BLE
+   - Connexion possible via l’application nRF Connect
+   - Envoi de trames en fonction des actions de l’utilisateur
+
+Structure des données
+
+Structure en langage C utilisée pour la commande :
+
+typedef struct {
+  int8_t vitesseX;
+  int8_t vitesseY;
+  uint8_t fonction; // exemple : arrêt, démarrage, etc.
+} Commande;
+
+union {
+  Commande donnees;
+  uint8_t trame[sizeof(Commande)];
+} TrameCommande;
