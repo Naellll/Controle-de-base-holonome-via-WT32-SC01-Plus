@@ -8,8 +8,8 @@
 #include <WiFiServer.h>
 
 // PARAMETRES (A ADAPTER)
-const char* ssid = "eliez";       // Nom du Wifi
-const char* mdp = "123456789";     // Mot de passe du Wifi
+const char* ssid = "nom_wifi";       // Nom du Wifi
+const char* mdp = "mot_de_passe";     // Mot de passe du Wifi
 const int VITESSE_MAX_ROBOT = 250;    // Vitesse maximale du robot (ne pas depasser 400)
 const int DELAIS_ENVOI_DONNEE = 25;   // Le delais d'envoi sera de DELAIS_ENVOI_DONNEE * 20 (en ms)
 
