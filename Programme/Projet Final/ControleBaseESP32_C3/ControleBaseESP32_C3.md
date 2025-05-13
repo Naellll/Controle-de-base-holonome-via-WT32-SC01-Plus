@@ -6,7 +6,7 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;Pour utiliser ce programme, il est nécessaire que vous ayez pris connaissance du tutoriel pour mettre en place votre espace de travail sous Arduino IDE.
 
-&nbsp;&nbsp;&nbsp;&nbsp;Vous pouvez ensuite ouvrir le fichier La première étape importante pour la configuration de ce programme est la définition des paramètres du réseau auquel vous voulez vous connecter. Répérez ces lignes de codes au début du programme :
+&nbsp;&nbsp;&nbsp;&nbsp;Vous pouvez ensuite ouvrir le fichier *ControleBaseESP32_C3.ino*. La première étape importante pour la configuration de ce programme est la définition des paramètres du réseau auquel vous voulez vous connecter. Répérez ces lignes de codes au début du programme :
 
 ```bash
 const char* ssid = "nom_wifi";
