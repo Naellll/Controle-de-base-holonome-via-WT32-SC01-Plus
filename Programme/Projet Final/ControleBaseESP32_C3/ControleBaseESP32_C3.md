@@ -22,7 +22,7 @@ const char* host = "adresse_serveur";
 const uint16_t port = port_serveur;
 ```
 
-&nbsp;&nbsp;&nbsp;&nbsp;Remplacez la variable *host* par l'adresse IP de votre ordinateur sur le réseau auquel il est connecté et la variable *port* par le numéro du port sur lequel vous enverrez les données.
+&nbsp;&nbsp;&nbsp;&nbsp;Remplacez la variable *host* par l'adresse IP de la carte WT32-SC01 Plus sur le réseau auquel elle est connectée et la variable *port* par le numéro du port sur lequel vous enverrez les données. L'adresse IP de la carte sera affichée dans le moniteur série associée à elle, lorsque que la carte sera connectée au réseau.
 
 ---
 
