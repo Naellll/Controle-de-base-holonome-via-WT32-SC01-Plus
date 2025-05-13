@@ -8,7 +8,6 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;Vous pouvez ensuite ouvrir le fichier La première étape importante pour la configuration de ce programme est la définition des paramètres du réseau auquel vous voulez vous connecter. Répérez ces lignes de codes au début du programme :
 
-<!-- Syntaxe pour un affichage de type : éditeur de code -->
 ```bash
 const char* ssid = "nom_wifi";
 const char* mdp = "mot_de_passe";
@@ -33,7 +32,6 @@ const uint16_t port = port_serveur;
 
 &nbsp;&nbsp;&nbsp;&nbsp;Ensuite connectez le WT32-SC01 Plus (après avoir suivi les instructions pour son fichier), et vous devriez être capable de piloter la base.
 
-<!-- À adapter selon le/les auteur/auteurs -->
 ## Auteurs
 Nathanaël DEBREILLY - Github : [@Naellll](https://github.com/Naellll) - E-mail : eliez.lehunsec.pro@gmail.com
 
