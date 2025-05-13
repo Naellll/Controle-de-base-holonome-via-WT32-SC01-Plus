@@ -2,7 +2,7 @@
 
 Projet pluridisciplinaire PEI-2 
 
-Auteurs : Ilan CHANY, Nathanaël DEBREILLY, Eliez LE HUNSEC
+Auteurs : **Ilan CHANY**, **Nathanaël DEBREILLY**, **Eliez LE HUNSEC**
 
 Encadrants : **M. Stéphane BOCHARD**, **M. Philippe GICQUEL**
 
