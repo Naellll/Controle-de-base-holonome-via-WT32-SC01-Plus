@@ -8,6 +8,7 @@ const char* mdp = "mot_de_passe"; // Mot de passe du Wifi
 // CONFIGURATION SERVEUR
 const char* host = "adresse_serveur"; // Adresse IP du serveur
 const uint16_t port = port_serveur; // Port du serveur
+
 WiFiClient client;
 
 // STRUCTURE DE DONNÉE
