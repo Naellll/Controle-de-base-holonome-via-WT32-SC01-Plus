@@ -33,14 +33,12 @@ const uint16_t port = port_serveur;
 &nbsp;&nbsp;&nbsp;&nbsp;Ensuite connectez le WT32-SC01 Plus (après avoir suivi les instructions pour son fichier), et vous devriez être capable de piloter la base.
 
 ## Auteurs
-Nathanaël DEBREILLY - Github : [@Naellll](https://github.com/Naellll) - E-mail : eliez.lehunsec.pro@gmail.com
+Eliez LE HUNSEC - Github : [@EliezLH](https://github.com/EliezLH) - E-mail : eliez.lehunsec.pro@gmail.com
 
-Eliez LE HUNSEC - Github : [@EliezLH](https://github.com/EliezLH) - E-mail : nathanael.debreilly.pro@gmail.com
+Nathanaël DEBREILLY - Github : [@Naellll](https://github.com/Naellll) - E-mail : nathanael.debreilly.pro@gmail.com
 
 Ilan CHANY - Github : [@IcanChan](https://github.com/IcanChan) - E-mail : chany.e2301851@etud.univ-ubs.fr
 
-
-<!-- NE PAS TOUCHER -->
 ## Projet complet : contrôle de base holonome via WT32-SC01 Plus
 
 Lien Github : [Projet](https://github.com/Naellll/Controle-de-base-holonome-via-WT32-SC01-Plus)
