@@ -2,6 +2,7 @@
 
 Projet pluridisciplinaire PEI-2 – L2 PEI  
 Auteurs : Ilan CHANY, Nathanaël DEBREILLY, Eliez LE HUNSEC
+
 Encadrants : **M. Stéphane BOCHARD**, **M. Philippe GICQUEL**
 
 ---
