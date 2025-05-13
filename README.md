@@ -1,6 +1,7 @@
 # 🕹️ Contrôle de Base Holonome via WT32-SC01 Plus
 
-Projet pluridisciplinaire PEI-2 – L2 PEI  
+Projet pluridisciplinaire PEI-2 
+
 Auteurs : Ilan CHANY, Nathanaël DEBREILLY, Eliez LE HUNSEC
 
 Encadrants : **M. Stéphane BOCHARD**, **M. Philippe GICQUEL**
