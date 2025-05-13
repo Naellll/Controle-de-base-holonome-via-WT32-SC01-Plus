@@ -2,12 +2,12 @@
 #include <WiFi.h>
 
 // CONFIGURATION WIFI
-const char* ssid = "eliez"; // Nom du Wifi
-const char* mdp = "123456789"; // Mot de passe du Wifi
+const char* ssid = "nom_wifi"; // Nom du Wifi
+const char* mdp = "mot_de_passe"; // Mot de passe du Wifi
 
 // CONFIGURATION SERVEUR
-const char* host = "192.168.54.5"; // Adresse IP du serveur
-const uint16_t port = 1234; // Port du serveur
+const char* host = "adresse_serveur"; // Adresse IP du serveur
+const uint16_t port = port_serveur; // Port du serveur
 WiFiClient client;
 
 // STRUCTURE DE DONNÉE
