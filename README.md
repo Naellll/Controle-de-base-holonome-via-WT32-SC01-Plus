@@ -93,8 +93,8 @@ union {
 
 ## ✏️ Auteurs
 
-Eliez LE HUNSEC - Github : [@EliezLH](https://github.com/EliezLH) - E-mail : eliez.lehunsec.pro@gmail.com
+**Eliez LE HUNSEC** - Github : [@EliezLH](https://github.com/EliezLH) - E-mail : eliez.lehunsec.pro@gmail.com
 
-Nathanaël DEBREILLY - Github : [@Naellll](https://github.com/Naellll) - E-mail : nathanael.debreilly@gmail.com
+**Nathanaël DEBREILLY** - Github : [@Naellll](https://github.com/Naellll) - E-mail : nathanael.debreilly@gmail.com
 
-Ilan CHANY - Github : [@IcanChan](https://github.com/IcanChan) - E-mail : chany.e2301851@etud.univ-ubs.fr
+**Ilan CHANY** - Github : [@IcanChan](https://github.com/IcanChan) - E-mail : chany.e2301851@etud.univ-ubs.fr
