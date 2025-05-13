@@ -1,1 +1,0 @@
-Fichier geogebra où tous les points nécessaires pour la conception de l'interfaces graphiques y sont enregistrés aux bonnes coordonnées (il faut juste en lever le signe - des coordonnées de l'axe y).
